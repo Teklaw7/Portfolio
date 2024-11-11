@@ -31,3 +31,16 @@ locations.forEach(location => {
 function navigateToPage(url) {
     window.location.href = url; // Redirection dans le même onglet
 }
+
+let currentIndex = 0;
+
+function changeSlide(direction) {
+  const slides = document.querySelectorAll(".unc-item");
+  currentIndex = (currentIndex + direction + slides.length) % slides.length;
+  
+  // Appliquer une transformation pour afficher la bonne image
+  const offset = -currentIndex * 100;
+  slides.forEach((slide) => {
+    slide.style.transform = `translateX(${offset}%)`;
+  });
+}

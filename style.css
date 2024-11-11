@@ -107,3 +107,40 @@ footer {
   border-top: 1px solid #ddd;
   margin-top: 1em;
 }
+
+.unc {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.unc-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%;
+}
+
+.unc-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.unc-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;  
+}
+
+.unc-button.prev {
+  left: 10px;
+}
+
+.unc-button.next {
+  right: 10px;
+}
