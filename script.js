@@ -3,16 +3,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 5,
 }).addTo(map);
 
+// Groupement des localisations qui partagent les mêmes coordonnées
 const locations = [
     {
         coords: [46.603354, 1.888334],
-        popup: "France : Projet en vision industrielle",
-        url: "projetFrance.html" // Page de destination pour ce projet
+        popups: [
+            { popup: " - France : Brignais : Développeur C++ / Qt", url: "#projects" },
+            { popup: " - France : Villeurbanne : Stage en vision par ordinateur à Kitware SAS, Développement d'une plateforme d'annotations de données 3D", url: "#projects" }
+        ]
     },
     {
         coords: [35.9049, -79.0484],
-        popup: "États-Unis : Année de césure de recherche en imagerie médicale à UNC",
-        url: "projetUNC.html" // Page de destination pour ce projet
+        popups: [
+            { popup: " - États-Unis : Année de césure de recherche en imagerie médicale à UNC", url: "#projects" }
+        ]
     },
 ];
 
@@ -24,23 +28,38 @@ locations.forEach(location => {
         radius: 500000
     }).addTo(map);
 
-    marker.bindPopup(`<a href="#" onclick="navigateToPage('${location.url}')">${location.popup}</a>`);
+    // Construction du contenu du popup avec plusieurs liens si nécessaire
+    const popupContent = location.popups.map(
+        item => `<div><a href="#" onclick="navigateToPage('${item.url}')">${item.popup}</a></div>`
+    ).join("");
+
+    marker.bindPopup(popupContent);
 });
 
-// Fonction de redirection vers la page dans le même onglet
 function navigateToPage(url) {
-    window.location.href = url; // Redirection dans le même onglet
+    if (url.startsWith("#")) {
+        // Navigation vers une section spécifique de la même page
+        const targetElement = document.querySelector(url);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        } else {
+            console.error("L'élément cible n'existe pas : " + url);
+        }
+    } else {
+        // Redirection vers une autre page
+        window.location.href = url;
+    }
 }
 
 let currentIndex = 0;
 
 function changeSlide(direction) {
-  const slides = document.querySelectorAll(".unc-item");
-  currentIndex = (currentIndex + direction + slides.length) % slides.length;
-  
-  // Appliquer une transformation pour afficher la bonne image
-  const offset = -currentIndex * 100;
-  slides.forEach((slide) => {
-    slide.style.transform = `translateX(${offset}%)`;
-  });
+    const slides = document.querySelectorAll(".unc-item");
+    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+
+    // Appliquer une transformation pour afficher la bonne image
+    const offset = -currentIndex * 100;
+    slides.forEach((slide) => {
+        slide.style.transform = `translateX(${offset}%)`;
+    });
 }

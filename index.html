@@ -16,28 +16,44 @@
 
   <section id="about">
     <h2><a href="about.html">À propos de moi</a></h2>
-    <p>Ingénieur passionné par la vision par ordinateur, j'ai travaillé sur des projets complexes, 
+    <p style="text-align: justify;">
+      Ingénieur passionné par la vision par ordinateur, j'ai travaillé sur des projets complexes, 
       notamment dans le traitement de données 3D et 2D, l'apprentissage automatique et la modélisation de données. 
       Mon expérience m'a permis de développer des solutions innovantes en utilisant des outils comme C++, Python, OpenCV, 
       et des frameworks de deep learning, compétences que je souhaite mettre à profit dans votre entreprise pour contribuer 
-      à l'innovation dans le domaine de l'imagerie scientifique et de la vision par ordinateur.</p>
+      à l'innovation dans le domaine de l'imagerie scientifique et de la vision par ordinateur.
+    </p>
   </section>
 
   <section id="skills">
     <h2><a href="skills.html">Compétences</a></h2>
     <ul>
       <li><strong>Languages : </strong>C++, Python, Javascript</li>
-      <li><strong>Librairies : </strong>PyTorch, PyTorch Lightning, PyTorch3D, TensorFlow, ONNX, Dipy, OpenCV, VTK, ITK, Qt, CMake</li>
+      <li><strong>Librairies : </strong>PyTorch, PyTorch Lightning, PyTorch3D, TensorFlow, ONNX, Dipy, OpenCV, VTK, ITK, Qt</li>
       <li><strong>IDE : </strong> VSCode, QtCreator</li>
-      <li>Programmation Orientée Objet, Analyse et Traitement de données 2D/3D, Animation, Simulation</li>
+      <li><strong>Outils : </strong>Git, Docker, CMake, Make, Linux, Windows</li>
+      <li style="text-align: justify;">Programmation Orientée Objet, Analyse et Traitement de données 2D/3D, Deep Learning, Imagerie médicaled, Animation, Simulation, Rendu Graphique, Programmation GPU, Calibrage, Rendu Volumique</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2><a href="projects.html">Projets</a></h2>
-    <div class="project">
-      <h3>Développement d'une plateforme d'annotation machine learning open source sur données 3D massives</h3>
-      <p>
+    <h2><a href="projects.html">Expériences Professionnelles</a></h2>
+    <div class="project_thelesys">
+      <h3>Depuis Octobre 2024 - Développeur C++ / Qt</h3>
+      <p style="text-align: justify;">
+        Ingénieur consultant travaillant pour l'entreprise SafetyTech, j'ai travaillé sur le développement d'une application
+        permettant la communication avec des ECU (unité de contrôle électronique) et ainsi la lecture mais également l'écriture
+        de données dans l'EEPROM embarqué grâce aux services du protocole UDS.
+      </p>
+      <p><strong>C++, CMake, Qt</strong></p>
+      <p><strong>Thelesys</strong> 69 Rue Montgolfier, 69006 Lyon</p>
+    </div>
+
+    <hr>
+
+    <div class="project_kitware">
+      <h3>Février 2024 à Juillet 2024 - Développement d'une plateforme d'annotation machine learning open source sur données 3D massives</h3>
+      <p style="text-align: justify;">
         Avec l'essor de nombreux modèles de deep learning pour des tâches comme la classification et la segmentation de données 3D, 
         de nombreux chercheurs ont depuis plusieurs années développé des outils pour générer des annotations nécessaires à l’entraînement 
         de ces modèles. Toutefois, la plupart de ces outils sont payants ou soumis à des restrictions de licence, limitant leur accessibilité. 
@@ -46,8 +62,7 @@
         développé par Kitware – offre une alternative libre d’accès nommée <strong>Paralabel</strong>.
       </p>
       <p><strong>C++, CMake, Qt, VTK</strong></p>
-      <p><strong>Kitware SAS</strong> 6 Cr André Philip 69100 Villeurbanne</p>
-      <p>Stage de 6 mois : Février 2024 à Juillet 2024</p>
+      <p><strong><a href="https://www.kitware.fr/">Kitware SAS</a></strong> 6 Cr André Philip 69100 Villeurbanne</p>
       <p><strong>Maîtres de stage : </strong> <a href="https://www.kitware.fr/profiles/gatien-ferret-2/">Gatien Ferret (Responsable équipe vision par ordinateur)</a>, <a href="https://www.kitware.fr/profiles/loic-tetrel/">Loic Tetrel (Lead Développeur)</a></p>
       <p><strong><a href="https://gitlab.kitware.com/keu-computervision/paralabel/paralabel">=> Lien vers le code source</a></strong></p>
     </div>
@@ -56,17 +71,16 @@
 
     <hr>
 
-    <div class="project">
-      <h3>Chercheur stagiaire en imagerie médicale à UNC (University of North Carolina at Chapel Hill)</h3>
-      <p>En imagerie médicale, de nombreux chercheurs s'intéressent au fonctionnement du cerveau. Pour étudier son activité et ses connexions,
+    <div id="project_unc">
+      <h3>Août 2022 à Août 2023 - Chercheur stagiaire en imagerie médicale à UNC (University of North Carolina at Chapel Hill)</h3>
+      <p style="text-align: justify;">En imagerie médicale, de nombreux chercheurs s'intéressent au fonctionnement du cerveau. Pour étudier son activité et ses connexions,
          des méthodes d’imagerie comme la DTI (Diffusion Tensor Imaging) sont utilisées pour visualiser les fibres cérébrales et le sens de 
          leurs connexions. L’objectif est de classifier ces fibres en fonction de leur orientation et de leurs groupes, permettant ainsi une 
          meilleure compréhension des mécanismes cérébraux. Ce projet de recherche, dirigé par le Dr Juan Carlos Prieto et le Dr Martin Styner, 
          a permis de tester plusieurs réseaux de neurones pour la classification des fibres, avec un taux de précision de 85 %. 
          Toutefois, certaines classes demeurent difficiles à prédire, et le sujet fait toujours l’objet de recherches.</p>
       <p><strong>Python, PyTorch Lightning, PyTorch3D, Dipy, VTK, TensorFlow, TensorBoard</strong></p>
-      <p><strong>University of North Carolina at Chapel Hill</strong> 1201 S Columbia Rd, Chapel Hill, NC 27599</p>
-      <p>Année de césure de 12 mois : Août 2022 à Août 2023</p>
+      <p><strong><a href="https://www.unc.edu/">University of North Carolina at Chapel Hill</a></strong> 1201 S Columbia Rd, Chapel Hill, NC 27599</p>
       <p><strong>Maîtres de stage : </strong><a href="https://www.med.unc.edu/psych/people/martin-styner-phd/">Dr. Martin Styner</a>, <a href="https://www.med.unc.edu/psych/people/juan-prieto-phd/">Dr. Juan Carlos Prieto</a></p>
       <p><strong><a href="https://github.com/Teklaw7/Project_Brain_Fibers_Classification">=> Lien vers le code source</a></strong></p>
     </div>

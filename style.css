@@ -144,3 +144,30 @@ footer {
 .unc-button.next {
   right: 10px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Appliquez ces styles à tous les éléments textuels dans le body */
+body {
+  font-family: Arial, sans-serif; /* Choisir une police sans-serif */
+  line-height: 1.6; /* Meilleure lisibilité */
+}
+
+/* Appliquez un style de bloc pour le texte à l'intérieur de chaque élément du body */
+h1, h2, h3, p, li, .text-block {
+  padding: 10px;
+  width: auto; /* Largeur automatique */
+  max-width: 100%; /* La largeur ne dépasse pas 100% de l'écran */
+  box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+}
+
+/* Assurez-vous que le texte dans les popups et autres sections reste centré ou bien aligné */
+.text-block {
+  text-align: center; /* Aligner à gauche, mais peut être changé à 'center' si nécessaire */
+}
+
+.section p {
+  text-align: justify;
+}
