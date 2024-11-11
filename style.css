@@ -4,25 +4,49 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  background-color: #f9f9f9;
+  background-color: #e0e9eb;
 }
 
 /* En-tête */
 header {
-  background-color: #4CAF50;
+  background-color: #4b8fb1;
   color: white;
   text-align: center;
   padding: 2em;
+  position: relative;
 }
 
+/* Style de la photo de profil */
+.profile-photo {
+  width: 80px; /* Ajuster la taille de l'image */
+  height: 80px; /* Assurez-vous que l'image soit carrée */
+  border-radius: 50%; /* Rendre l'image ronde */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  object-fit: cover; /* Assurer que l'image couvre l'espace sans déformation */
+}
+
+/* Lien vers le CV */
+.cv-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cv-link:hover {
+  text-decoration: underline;
+}
+
+/* Titre et texte sous le header */
 header h1 {
   font-size: 3em;
+  margin-top: 0; /* Éviter l'espace au-dessus du titre */
   margin-bottom: 0.2em;
-}
-
-header p {
-  font-size: 1.2em;
-  font-weight: 300;
 }
 
 header p1 {
@@ -30,34 +54,10 @@ header p1 {
   font-weight: 300;
 }
 
-  header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+header p {
+  font-size: 1.2em;
+  font-weight: 300;
 }
-
-header nav ul li {
-    margin: 0;
-    padding: 0 1em;
-    position: relative;
-    border-right: 1px solid white; /* Bordure entre les éléments */
-}
-
-header nav ul li:last-child {
-    border-right: none; /* Supprime la bordure après le dernier élément */
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
 
 /* Sections */
 section {
@@ -75,12 +75,11 @@ section a {
 }
 
 section a:hover {
-  
   text-decoration: underline;
 }
 
 h2 a {
-  color: #4CAF50; /* Couleur du texte pour correspondre au reste */
+  color: #4b8fb1; /* Couleur du texte pour correspondre au reste */
   text-decoration: none; /* Enlève le soulignement */
 }
 
@@ -92,18 +91,18 @@ footer a {
   text-align: center;
   font-size: 1.2em;
   text-decoration: none;
-  color: #333;
+  color: white;
 }
 
 footer a:hover {
   text-decoration: underline;
-  color: #333;
+  color: white;
 }
 
 footer {
   text-align: center;
   padding: 1em;
-  background-color: #f9f9f9;
+  background-color: #4b8fb1;
   border-top: 1px solid #ddd;
   margin-top: 1em;
 }
@@ -145,6 +144,43 @@ footer {
   right: 10px;
 }
 
+.reco {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.reco-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%;
+}
+
+.reco-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.reco-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;  
+}
+
+.reco-button.prev {
+  left: 10px;
+}
+
+.reco-button.next {
+  right: 10px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -155,7 +191,7 @@ body {
   line-height: 1.6; /* Meilleure lisibilité */
 }
 
-/* Appliquez un style de bloc pour le texte à l'intérieur de chaque élément du body */
+/* Applique un style de bloc pour le texte à l'intérieur de chaque élément du body */
 h1, h2, h3, p, li, .text-block {
   padding: 10px;
   width: auto; /* Largeur automatique */
@@ -170,4 +206,91 @@ h1, h2, h3, p, li, .text-block {
 
 .section p {
   text-align: justify;
+}
+
+/* Style pour les liens */
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.cv-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  top: 50px;
+  right: 50px;
+}
+
+/* Style de la photo de profil */
+.profile-photo {
+  width: 15vw;  /* Utilise 15% de la largeur de la fenêtre de visualisation */
+  height: 15vw; /* Utilise 15% de la largeur pour conserver une forme carrée */
+  max-width: 150px;  /* La largeur maximale sera de 150px */
+  max-height: 150px; /* La hauteur maximale sera de 150px */
+  border-radius: 50%;  /* Pour garder l'image ronde */
+  object-fit: cover;  /* Pour que l'image couvre la zone sans déformation */
+  position: absolute;
+  top: 50px; /* Positionne l'image en haut */
+  left: 50px; /* Positionne l'image à gauche */
+}
+
+/* Adaptation pour les petits écrans, par exemple sur mobile */
+@media (max-width: 768px) {
+  .profile-photo {
+    width: 25vw;  /* 25% de la largeur de l'écran */
+    height: 25vw; /* Garder la forme carrée */
+    max-width: 120px; /* Limiter la taille maximale sur les petits écrans */
+    max-height: 120px; /* Limiter la taille maximale sur les petits écrans */
+  }
+}
+
+/* Adaptation pour les écrans très petits, comme les téléphones */
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 35vw;  /* Augmenter la taille relative pour les très petits écrans */
+    height: 35vw; /* Garder la forme carrée */
+    max-width: 100px; /* Limiter encore plus la taille sur les très petits écrans */
+    max-height: 100px; /* Limiter encore plus la taille sur les très petits écrans */
+  }
+}
+
+/* Style pour l'image en zoom */
+.zoomed-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.zoomed-container img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
 }

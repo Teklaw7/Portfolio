@@ -23,7 +23,7 @@ const locations = [
 locations.forEach(location => {
     const marker = L.circle(location.coords, {
         color: 'blue',
-        fillColor: '#4CAF50',
+        fillColor: '#4b8fb1',
         fillOpacity: 0.5,
         radius: 500000
     }).addTo(map);
@@ -63,3 +63,39 @@ function changeSlide(direction) {
         slide.style.transform = `translateX(${offset}%)`;
     });
 }
+
+let currentIndexReco = 0;
+
+function changeSlideReco(direction) {
+    const slides = document.querySelectorAll(".reco-item");
+    currentIndexReco = (currentIndexReco + direction + slides.length) % slides.length;
+
+    // Appliquer une transformation pour afficher la bonne image
+    const offset = -currentIndexReco * 100;
+    slides.forEach((slide) => {
+        slide.style.transform = `translateX(${offset}%)`;
+    });
+}
+
+// Affiche l'image en zoom lorsqu'on clique dessus
+function openZoom(imageSrc) {
+    var zoomedContainer = document.getElementById("zoomed-container");
+    var zoomedImage = document.getElementById("zoomed-image");
+  
+    zoomedImage.src = imageSrc;  // Changer la source de l'image
+    zoomedContainer.style.display = "flex";  // Afficher le zoom
+  }
+  
+  // Ferme l'image zoomée
+  function closeZoom() {
+    var zoomedContainer = document.getElementById("zoomed-container");
+    zoomedContainer.style.display = "none";  // Cacher le zoom
+  }
+  
+  // Ajouter un événement de clic aux images
+  document.querySelectorAll('img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      openZoom(this.src);  // Ouvrir l'image en plein écran
+    });
+  });
+  

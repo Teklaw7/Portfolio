@@ -9,13 +9,15 @@
 </head>
 <body>
   <header>
+    <img src="images/photo_profil.png" alt="Votre photo" class="profile-photo">
+    <a href="CV_2024-11-11_Timothée_Teyssier.pdf" class="cv-link" target="_blank">Mon CV</a>
     <h1>Timothée Teyssier</h1>
     <p1>Ingénieur en Vision par Ordinateur</p1>
     <p>Diplômé de l'école CPE Lyon</p>
   </header>
 
   <section id="about">
-    <h2><a href="about.html">À propos de moi</a></h2>
+    <h2><a>À propos de moi</a></h2>
     <p style="text-align: justify;">
       Ingénieur passionné par la vision par ordinateur, j'ai travaillé sur des projets complexes, 
       notamment dans le traitement de données 3D et 2D, l'apprentissage automatique et la modélisation de données. 
@@ -26,7 +28,7 @@
   </section>
 
   <section id="skills">
-    <h2><a href="skills.html">Compétences</a></h2>
+    <h2><a>Compétences</a></h2>
     <ul>
       <li><strong>Languages : </strong>C++, Python, Javascript</li>
       <li><strong>Librairies : </strong>PyTorch, PyTorch Lightning, PyTorch3D, TensorFlow, ONNX, Dipy, OpenCV, VTK, ITK, Qt</li>
@@ -37,7 +39,7 @@
   </section>
 
   <section id="projects">
-    <h2><a href="projects.html">Expériences Professionnelles</a></h2>
+    <h2><a>Expériences Professionnelles</a></h2>
     <div class="project_thelesys">
       <h3>Depuis Octobre 2024 - Développeur C++ / Qt</h3>
       <p style="text-align: justify;">
@@ -46,7 +48,7 @@
         de données dans l'EEPROM embarqué grâce aux services du protocole UDS.
       </p>
       <p><strong>C++, CMake, Qt</strong></p>
-      <p><strong>Thelesys</strong> 69 Rue Montgolfier, 69006 Lyon</p>
+      <p><strong><a href="https://thelesys.com/">Thelesys</a></strong> 69 Rue Montgolfier, 69006 Lyon</p>
     </div>
 
     <hr>
@@ -100,6 +102,53 @@
     <hr>
   </section>
 
+  <section id="personal_projects">
+    <h2><a>Projets Personnels</a></h2>
+    <div class="project_end_of_studies">
+      <h3>De Décembre 2023 à Janvier 2024 - Reconstruction de la trajectoire 3D d'une balle de tennis</h3>
+      <p style="text-align: justify";>
+      Ce projet a été réalisé avec Luc Anchling dans le but de reconstruire la trajectoire 3D d'une balle de tennis
+      grâce à deux caméras. Ce projet comporte une tâche de calibrage des caméras permettant de connaître la position
+      3D de la balle de tennis par rapport à un référentiel commun aux deux caméras. Il comporte également une tâche 
+      permettant de détecter et de traquer la balle de tennis sur les deux caméras même si la balle est partiellement
+      obstruée. Ce projet a été menée à bien permettant la création d'un jeu vidéo sous unity (Toucher certains blocs 
+      en 3D à partir de la balle de tennis) mais également à analyser la trajectoire de la balle : vitesse, point de chute...
+      </p>
+      <p><strong>Python, OpenCV</strong></p>
+      <p><strong>Collaborateurs : </strong>Luc Anchling</p>
+      <p><strong><a href="https://github.com/lucanchling/Object_Tracking">=> Lien vers le code source</a></strong></p>
+    </div>
+
+    <div class="reco">
+      <div class="reco-container">
+        <div class="reco-item">
+          <img src="images/Capture d’écran du 2024-01-16 17-26-54.png" alt="image54" width=50% height="400">
+        </div>
+        <div class="reco-item">
+          <img src="images/Capture d’écran du 2024-01-24 11-58-53.png" alt="image53" width=50% height="400">
+        </div>
+      </div>
+      <button class="reco-button prev" onclick="changeSlideReco(-1)">&#10094;</button>
+      <button class="reco-button next" onclick="changeSlideReco(1)">&#10095;</button>
+    </div>
+
+    <hr>
+
+    <div class="project_mole_checking">
+      <h3>En cours - Plateforme web permettant de diagnostiquer un grain de beauté</h3>
+      <p style="text-align: justify";>
+        Dans le cadre de l'amélioration des outils de santé en ligne, je travaille en ce moment sur une application web innovante permettant 
+        de détecter la présence de grains de beauté potentiellement cancéreux. Cette application s’appuie sur une approche algorithmique 
+        avancée pour analyser les photos des grains de beauté, en l’absence d'intelligence artificielle pour l'instant. L’objectif 
+        est d’offrir une première évaluation visuelle afin de détecter les signes avant-coureurs du cancer de la peau, principalement 
+        le mélanome.
+      </p>
+      <p><strong>Vue, JS</strong></p>
+      <p><strong><a href="https://github.com/Teklaw7?tab=repositories">=> Lien vers le code source</a></strong></p>
+    </div>
+    
+  </section>
+
   <section id="experiences">
     <h2>Expériences Internationales</h2>
     <div id="worldMap" style="width: 100%; height: 500px;"></div>
@@ -110,6 +159,12 @@
     <p>Vous pouvez consulter mon profil GitHub pour plus de détails sur mes projets et contributions.</p>
     <a href="https://github.com/Teklaw7?tab=repositories"><strong>Visiter mon profil GitHub</strong></a>
   </section>
+
+  <!-- Zoomed image container -->
+  <div id="zoomed-container" class="zoomed-container" style="display:none;">
+    <span class="close-btn" onclick="closeZoom()">&#10006;</span>
+    <img id="zoomed-image" src="" alt="Zoomed Image">
+  </div>
 
   <footer>
     <p><a href="mailto:timothee.teyssier@cpe.fr"><strong>Contactez-moi : timothee.teyssier@cpe.fr</strong></a></p>
