@@ -11,35 +11,22 @@ body {
 header {
   background-color: #4b8fb1;
   color: white;
-  text-align: center;
-  padding: 2em;
+  padding: 1.25em 1.5em 2em;
   position: relative;
 }
 
-/* Style de la photo de profil */
-.profile-photo {
-  width: 80px; /* Ajuster la taille de l'image */
-  height: 80px; /* Assurez-vous que l'image soit carrée */
-  border-radius: 50%; /* Rendre l'image ronde */
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  object-fit: cover; /* Assurer que l'image couvre l'espace sans déformation */
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75em;
+  margin-bottom: 1.25em;
 }
 
 .lang-switch {
-  position: absolute;
-  top: 16px;
-  right: 20px;
   display: flex;
   gap: 0.25em;
   z-index: 2;
-}
-
-/* Keep CV below the language switcher */
-header .cv-link {
-  top: 52px;
-  right: 20px;
 }
 
 .lang-switch button {
@@ -58,36 +45,82 @@ header .cv-link {
   font-weight: bold;
 }
 
-/* Lien vers le CV */
 .cv-link {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  display: inline-block;
+  padding: 0.45em 0.9em;
+  background-color: #3d7a96;
   color: white;
-  font-size: 1.2em;
+  border-radius: 5px;
+  font-size: 0.95em;
   font-weight: bold;
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .cv-link:hover {
-  text-decoration: underline;
+  background-color: white;
+  color: #4b8fb1;
+  text-decoration: none;
 }
 
-/* Titre et texte sous le header */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.header-text {
+  text-align: left;
+  min-width: 0;
+}
+
 header h1 {
-  font-size: 3em;
-  margin-top: 0; /* Éviter l'espace au-dessus du titre */
-  margin-bottom: 0.2em;
+  font-size: clamp(1.6em, 4vw, 2.6em);
+  margin: 0 0 0.25em;
+  line-height: 1.15;
 }
 
-header p1 {
-  font-size: 1.5em;
+header .role {
+  font-size: clamp(1em, 2.2vw, 1.35em);
   font-weight: 300;
+  margin: 0 0 0.35em;
+  padding: 0;
 }
 
-header p {
-  font-size: 1.2em;
+header .school {
+  font-size: clamp(0.9em, 1.8vw, 1.1em);
   font-weight: 300;
+  margin: 0;
+  padding: 0;
+  opacity: 0.95;
+}
+
+@media (max-width: 640px) {
+  .header-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 /* Sections */
@@ -138,23 +171,43 @@ footer {
   margin-top: 1em;
 }
 
+/* Empêche les images de s'afficher à taille réelle */
+section img:not(.company-logo):not(.profile-photo) {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 320px;
+  height: auto;
+  object-fit: contain;
+  margin: 1em auto;
+  border-radius: 6px;
+  background: #f3f3f3;
+}
+
 .unc-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
-  margin: 1.5em auto;
-  max-width: 800px;
-  padding: 0 1em;
+  margin: 1.5em 0 0;
+  width: 100%;
 }
 
 .unc-gallery figure {
   margin: 0;
   text-align: center;
+  min-width: 0;
 }
 
 .unc-gallery img {
   width: 100%;
-  height: 220px;
+  max-width: 100%;
+  height: 180px;
+  max-height: 180px;
   object-fit: cover;
   border-radius: 6px;
   display: block;
@@ -163,7 +216,7 @@ footer {
 
 .unc-gallery figcaption {
   margin-top: 0.5em;
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: #555;
   padding: 0 4px;
 }
@@ -174,7 +227,8 @@ footer {
   }
 
   .unc-gallery img {
-    height: 200px;
+    height: 160px;
+    max-height: 160px;
   }
 }
 
@@ -193,6 +247,16 @@ footer {
 .reco-item {
   min-width: 100%;
   box-sizing: border-box;
+}
+
+.reco-item img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 280px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 .reco-button {
@@ -225,76 +289,13 @@ body {
   line-height: 1.6; /* Meilleure lisibilité */
 }
 
-/* Applique un style de bloc pour le texte à l'intérieur de chaque élément du body */
 h1, h2, h3, p, li, .text-block {
-  padding: 10px;
-  width: auto; /* Largeur automatique */
-  max-width: 100%; /* La largeur ne dépasse pas 100% de l'écran */
-  box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-/* Assurez-vous que le texte dans les popups et autres sections reste centré ou bien aligné */
 .text-block {
-  text-align: center; /* Aligner à gauche, mais peut être changé à 'center' si nécessaire */
-}
-
-.section p {
-  text-align: justify;
-}
-
-/* Style pour les liens */
-a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.cv-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  top: 50px;
-  right: 50px;
-}
-
-/* Style de la photo de profil */
-.profile-photo {
-  width: 15vw;  /* Utilise 15% de la largeur de la fenêtre de visualisation */
-  height: 15vw; /* Utilise 15% de la largeur pour conserver une forme carrée */
-  max-width: 150px;  /* La largeur maximale sera de 150px */
-  max-height: 150px; /* La hauteur maximale sera de 150px */
-  border-radius: 50%;  /* Pour garder l'image ronde */
-  object-fit: cover;  /* Pour que l'image couvre la zone sans déformation */
-  position: absolute;
-  top: 50px; /* Positionne l'image en haut */
-  left: 50px; /* Positionne l'image à gauche */
-}
-
-/* Adaptation pour les petits écrans, par exemple sur mobile */
-@media (max-width: 768px) {
-  .profile-photo {
-    width: 25vw;  /* 25% de la largeur de l'écran */
-    height: 25vw; /* Garder la forme carrée */
-    max-width: 120px; /* Limiter la taille maximale sur les petits écrans */
-    max-height: 120px; /* Limiter la taille maximale sur les petits écrans */
-  }
-}
-
-/* Adaptation pour les écrans très petits, comme les téléphones */
-@media (max-width: 480px) {
-  .profile-photo {
-    width: 35vw;  /* Augmenter la taille relative pour les très petits écrans */
-    height: 35vw; /* Garder la forme carrée */
-    max-width: 100px; /* Limiter encore plus la taille sur les très petits écrans */
-    max-height: 100px; /* Limiter encore plus la taille sur les très petits écrans */
-  }
+  text-align: center;
 }
 
 /* Style pour l'image en zoom */
@@ -390,16 +391,20 @@ a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 1em;
   margin-top: 1.5em;
+  width: 100%;
 }
 
 .smp-gallery figure {
   margin: 0;
   text-align: center;
+  min-width: 0;
 }
 
 .smp-gallery img {
   width: 100%;
-  height: 220px;
+  max-width: 100%;
+  height: 180px;
+  max-height: 180px;
   object-fit: cover;
   border-radius: 6px;
   display: block;
@@ -410,13 +415,14 @@ a:hover {
 }
 
 .smp-gallery-wide img {
-  height: 320px;
+  height: 240px;
+  max-height: 240px;
   object-fit: cover;
 }
 
 .smp-gallery figcaption {
   margin-top: 0.5em;
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: #555;
   padding: 0 4px;
 }
@@ -428,6 +434,7 @@ a:hover {
 
   .smp-gallery img,
   .smp-gallery-wide img {
-    height: 200px;
+    height: 160px;
+    max-height: 160px;
   }
 }

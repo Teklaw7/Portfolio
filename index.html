@@ -9,15 +9,21 @@
 </head>
 <body>
   <header>
-    <img src="images/photo_profil.png" alt="Profile photo" class="profile-photo" data-i18n-alt="index.photoAlt">
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" data-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    <div class="header-controls">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
+      <a href="CV_2026-10_Timothee_Teyssier.pdf" class="cv-link" target="_blank" data-i18n="index.cv">My CV</a>
     </div>
-    <a href="CV_2026-10_Timothee_Teyssier.pdf" class="cv-link" target="_blank" data-i18n="index.cv">My CV</a>
-    <h1>Timothée Teyssier</h1>
-    <p1 data-i18n="index.role">Data Scientist | Machine Learning &amp; Computer Vision</p1>
-    <p data-i18n="index.school">Graduate of CPE Lyon — Imaging, Modelling &amp; Computer Science (IMI)</p>
+    <div class="header-main">
+      <img src="images/photo_profil.png" alt="Profile photo" class="profile-photo" data-i18n-alt="index.photoAlt">
+      <div class="header-text">
+        <h1>Timothée Teyssier</h1>
+        <p class="role" data-i18n="index.role">Data Scientist | Machine Learning &amp; Computer Vision</p>
+        <p class="school" data-i18n="index.school">Graduate of CPE Lyon — Imaging, Modelling &amp; Computer Science (IMI)</p>
+      </div>
+    </div>
   </header>
 
   <section id="about">
@@ -121,7 +127,7 @@
       <p><strong><a href="https://gitlab.kitware.com/keu-computervision/paralabel/paralabel" data-i18n="common.sourceCode">=> Source code</a></strong></p>
     </div>
 
-    <img src="images/image6.png" alt="Paralabel view" width=100% height="400" data-i18n-alt="kitware.imgAlt">
+    <img class="content-img" src="images/image6.png" alt="Paralabel view" data-i18n-alt="kitware.imgAlt">
 
     <hr>
 
@@ -148,24 +154,24 @@
       <p><strong><a href="https://www.unc.edu/">University of North Carolina at Chapel Hill</a></strong> 1201 S Columbia Rd, Chapel Hill, NC 27599</p>
       <p><strong data-i18n="common.supervisors">Internship supervisors: </strong><a href="https://www.med.unc.edu/psych/people/martin-styner-phd/">Dr. Martin Styner</a>, <a href="https://www.med.unc.edu/psych/people/juan-prieto-phd/">Dr. Juan Carlos Prieto</a></p>
       <p><strong><a href="https://github.com/NIRALUser/DTIPlayground" data-i18n="unc.dtiLink">=> DTIPlayground</a></strong> · <strong><a href="https://github.com/Teklaw7/Project_Brain_Fibers_Classification" data-i18n="common.sourceCode">=> Source code</a></strong></p>
-    </div>
-    <div class="unc-gallery">
-      <figure>
-        <img src="images/unc_dti_axial.png" alt="Axial DTI brain scan" data-i18n-alt="unc.img1Alt">
-        <figcaption data-i18n="unc.img1Caption">DTI — brain white-matter fiber directions</figcaption>
-      </figure>
-      <figure>
-        <img src="images/unc_mri_dti_grid.png" alt="MRI and DTI medical imaging panel" data-i18n-alt="unc.img2Alt">
-        <figcaption data-i18n="unc.img2Caption">MRI &amp; DTI — large medical imaging datasets</figcaption>
-      </figure>
-      <figure>
-        <img src="images/image1.png" alt="Brain fiber visualization" data-i18n-alt="unc.img3Alt">
-        <figcaption data-i18n="unc.img3Caption">Fiber tractography visualization</figcaption>
-      </figure>
-      <figure>
-        <img src="images/image4.png" alt="Brain fiber classification result" data-i18n-alt="unc.img4Alt">
-        <figcaption data-i18n="unc.img4Caption">Neuronal fiber classification results</figcaption>
-      </figure>
+      <div class="unc-gallery">
+        <figure>
+          <img src="images/unc_dti_axial.png" alt="Axial DTI brain scan" data-i18n-alt="unc.img1Alt">
+          <figcaption data-i18n="unc.img1Caption">DTI — brain white-matter fiber directions</figcaption>
+        </figure>
+        <figure>
+          <img src="images/unc_mri_dti_grid.png" alt="MRI and DTI medical imaging panel" data-i18n-alt="unc.img2Alt">
+          <figcaption data-i18n="unc.img2Caption">MRI &amp; DTI — large medical imaging datasets</figcaption>
+        </figure>
+        <figure>
+          <img src="images/image1.png" alt="Brain fiber visualization" data-i18n-alt="unc.img3Alt">
+          <figcaption data-i18n="unc.img3Caption">Fiber tractography visualization</figcaption>
+        </figure>
+        <figure>
+          <img src="images/image4.png" alt="Brain fiber classification result" data-i18n-alt="unc.img4Alt">
+          <figcaption data-i18n="unc.img4Caption">Neuronal fiber classification results</figcaption>
+        </figure>
+      </div>
     </div>
 
     <hr>
@@ -186,10 +192,10 @@
     <div class="reco">
       <div class="reco-container">
         <div class="reco-item">
-          <img src="images/Capture d’écran du 2024-01-16 17-26-54.png" alt="image54" width=50% height="400">
+          <img class="content-img" src="images/Capture d’écran du 2024-01-16 17-26-54.png" alt="image54">
         </div>
         <div class="reco-item">
-          <img src="images/Capture d’écran du 2024-01-24 11-58-53.png" alt="image53" width=50% height="400">
+          <img class="content-img" src="images/Capture d’écran du 2024-01-24 11-58-53.png" alt="image53">
         </div>
       </div>
       <button class="reco-button prev" onclick="changeSlideReco(-1)">&#10094;</button>
