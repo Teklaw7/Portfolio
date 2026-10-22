@@ -1,122 +1,186 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio de Timothée Teyssier</title>
+  <title data-i18n="index.title">Timothée Teyssier Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
   <header>
-    <img src="images/photo_profil.png" alt="Votre photo" class="profile-photo">
-    <a href="CV_2024-11-11_Timothée_Teyssier.pdf" class="cv-link" target="_blank">Mon CV</a>
+    <img src="images/photo_profil.png" alt="Profile photo" class="profile-photo" data-i18n-alt="index.photoAlt">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <a href="CV_2026-10_Timothee_Teyssier.pdf" class="cv-link" target="_blank" data-i18n="index.cv">My CV</a>
     <h1>Timothée Teyssier</h1>
-    <p1>Ingénieur en Vision par Ordinateur</p1>
-    <p>Diplômé de l'école CPE Lyon</p>
+    <p1 data-i18n="index.role">Data Scientist | Machine Learning &amp; Computer Vision</p1>
+    <p data-i18n="index.school">Graduate of CPE Lyon — Imaging, Modelling &amp; Computer Science (IMI)</p>
   </header>
 
   <section id="about">
-    <h2><a>À propos de moi</a></h2>
-    <p style="text-align: justify;">
-      Ingénieur passionné par la vision par ordinateur, j'ai travaillé sur des projets complexes, 
-      notamment dans le traitement de données 3D et 2D, l'apprentissage automatique et la modélisation de données. 
-      Mon expérience m'a permis de développer des solutions innovantes en utilisant des outils comme C++, Python, OpenCV, 
-      et des frameworks de deep learning, compétences que je souhaite mettre à profit dans votre entreprise pour contribuer 
-      à l'innovation dans le domaine de l'imagerie scientifique et de la vision par ordinateur.
+    <h2><a data-i18n="about.heading">About me</a></h2>
+    <p style="text-align: justify;" data-i18n="about.text">
+      AI &amp; Computer Vision engineer based in Lyon, I design and ship industrial machine-learning applications that combine computer vision, software engineering and end-to-end ML workflows — from dataset preparation and model training to evaluation and deployment in desktop and mobile products.
     </p>
   </section>
 
   <section id="skills">
-    <h2><a>Compétences</a></h2>
+    <h2><a data-i18n="skills.heading">Skills</a></h2>
     <ul>
-      <li><strong>Languages : </strong>C++, Python, Javascript</li>
-      <li><strong>Librairies : </strong>PyTorch, PyTorch Lightning, PyTorch3D, TensorFlow, ONNX, Dipy, OpenCV, VTK, ITK, Qt</li>
-      <li><strong>IDE : </strong> VSCode, QtCreator</li>
-      <li><strong>Outils : </strong>Git, Docker, CMake, Make, Linux, Windows</li>
-      <li style="text-align: justify;">Programmation Orientée Objet, Analyse et Traitement de données 2D/3D, Deep Learning, Imagerie médicaled, Animation, Simulation, Rendu Graphique, Programmation GPU, Calibrage, Rendu Volumique</li>
+      <li><strong data-i18n="skills.ai">AI &amp; Machine Learning: </strong>Python, PyTorch, PyTorch Lightning, supervised / unsupervised / contrastive learning, dataset preparation, model evaluation, optimization</li>
+      <li><strong data-i18n="skills.cv">Computer Vision: </strong>OpenCV, image processing, object detection, segmentation, classification</li>
+      <li><strong data-i18n="skills.databases">Databases: </strong>PostgreSQL, MySQL, SQLite, MongoDB</li>
+      <li><strong data-i18n="skills.analysis">Data analysis &amp; visualization: </strong>Statistical analysis, Plotly, Power BI</li>
+      <li><strong data-i18n="skills.software">Software engineering: </strong>C++, Qt, CMake, Git, Docker</li>
+      <li><strong data-i18n="skills.web">Web: </strong>Django, JavaScript, HTML, CSS, React, Vue.js</li>
+      <li><strong data-i18n="skills.cicd">Testing &amp; CI/CD: </strong>CTest, pytest, GitLab CI/CD</li>
+      <li><strong data-i18n="skills.tools">Tools &amp; environments: </strong>DIPY, VTK, ITK, ONNX, TensorRT, Linux, Windows</li>
+      <li><strong data-i18n="skills.languagesLabel">Languages: </strong><span data-i18n="skills.languagesValue">French (native), English (C1)</span></li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2><a>Expériences Professionnelles</a></h2>
-    <div class="project_thelesys">
-      <h3>Depuis Octobre 2024 - Développeur C++ / Qt</h3>
-      <p style="text-align: justify;">
-        Ingénieur consultant travaillant pour l'entreprise SafetyTech, j'ai travaillé sur le développement d'une application
-        permettant la communication avec des ECU (unité de contrôle électronique) et ainsi la lecture mais également l'écriture
-        de données dans l'EEPROM embarqué grâce aux services du protocole UDS.
+    <h2><a data-i18n="exp.heading">Professional Experience</a></h2>
+
+    <div class="project_smp">
+      <div class="exp-header">
+        <img class="company-logo" src="images/logo_smp.png" alt="SMP Technik">
+        <h3 data-i18n="smp.title">May 2025 – Present — AI &amp; Computer Vision Engineer</h3>
+      </div>
+      <p style="text-align: justify;" data-i18n-html="smp.intro">
+        At SMP Technik, I build industrial AI applications that combine computer vision, machine learning and software engineering. My main product is <strong>DetecTool</strong>, an AI recognition solution for new and used metal-cutting tools (drills and mills).
       </p>
-      <p><strong>C++, CMake, Qt</strong></p>
-      <p><strong><a href="https://thelesys.com/">Thelesys</a></strong> 69 Rue Montgolfier, 69006 Lyon</p>
+      <ul class="exp-bullets">
+        <li data-i18n="smp.b1">End-to-end ML workflows: annotation, dataset prep, training and optimization</li>
+        <li data-i18n="smp.b2">Multi-stage pipelines for tool detection, segmentation and classification</li>
+        <li data-i18n="smp.b3">AI tool to analyze spindle drawings and extract their key technical elements</li>
+        <li data-i18n="smp.b4">Model evaluation with precision, recall, F1-score and confusion matrices</li>
+        <li data-i18n="smp.b5">AI inference integrated into desktop/mobile apps, databases and MQTT</li>
+      </ul>
+      <p style="text-align: justify;" data-i18n="smp.event">
+        In May 2026, we presented DetecTool at the Grinding Hub trade fair in Munich.
+      </p>
+      <p><strong>Python, PyTorch, OpenCV, ONNX, TensorRT, SQL, MQTT</strong></p>
+      <p><strong><a href="https://www.smp-technik.fr/">SMP Technik</a></strong> 122 rue Pasteur, 69780 Toussieu</p>
+      <div class="smp-gallery">
+        <figure>
+          <img src="images/smp_forets.jpg" alt="Metal-cutting drills used with DetecTool" data-i18n-alt="smp.foretsAlt">
+          <figcaption data-i18n="smp.foretsCaption">Drills (forets) — metal-cutting tools recognized by DetecTool</figcaption>
+        </figure>
+        <figure>
+          <img src="images/smp_fraises.jpg" alt="Mills used with DetecTool" data-i18n-alt="smp.fraisesAlt">
+          <figcaption data-i18n="smp.fraisesCaption">Mills (fraises) — metal-cutting tools recognized by DetecTool</figcaption>
+        </figure>
+        <figure class="smp-gallery-wide">
+          <img src="images/smp_grinding_hub.jpg" alt="SMP Technik booth at Grinding Hub Munich 2026" data-i18n-alt="smp.hubAlt">
+          <figcaption data-i18n="smp.hubCaption">DetecTool presented at Grinding Hub, Munich — May 2026</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="project_thelesys">
+      <div class="exp-header">
+        <div class="company-logos">
+          <img class="company-logo" src="images/logo_thelesys.png" alt="Thelesys">
+          <img class="company-logo company-logo--safetytech" src="images/logo_safetytech.png" alt="Safetytech">
+        </div>
+        <h3 data-i18n="thelesys.title">October 2024 – May 2025 — Software Developer</h3>
+      </div>
+      <p style="text-align: justify;" data-i18n="thelesys.text">
+        Developed a C++ / Qt application enabling communication between electronic components through UDS services and multithreading, working with real-time data from electronic systems and sensors. Worked in Agile (Scrum) with a 5-developer team: daily stand-ups, sprints, and iterative delivery.
+      </p>
+      <p><strong>C++, CMake, Qt, Agile</strong></p>
+      <p><strong><a href="https://thelesys.com/">Thelesys</a></strong> · <strong data-i18n="thelesys.client">Client: </strong><strong>Safetytech</strong> — 69 Rue Montgolfier, 69006 Lyon</p>
+      <p><strong data-i18n="common.recommendations">Recommendations: </strong>
+        <a href="https://www.linkedin.com/in/martin-pobel-17764b104/" target="_blank" rel="noopener">Martin Pobel</a>,
+        <a href="https://www.linkedin.com/in/thibaultneveu/" target="_blank" rel="noopener">Thibault Neveu</a>,
+        <a href="https://www.linkedin.com/in/sebonnefoy/" target="_blank" rel="noopener">Sébastien Bonnefoy</a>,
+        <a href="https://www.linkedin.com/in/guillaume-bernard-867858174/" target="_blank" rel="noopener">Guillaume Bernard</a>,
+        <a href="https://www.linkedin.com/in/aymane-n-890440174/" target="_blank" rel="noopener">Aymane N.</a>
+      </p>
     </div>
 
     <hr>
 
     <div class="project_kitware">
-      <h3>Février 2024 à Juillet 2024 - Développement d'une plateforme d'annotation machine learning open source sur données 3D massives</h3>
-      <p style="text-align: justify;">
-        Avec l'essor de nombreux modèles de deep learning pour des tâches comme la classification et la segmentation de données 3D, 
-        de nombreux chercheurs ont depuis plusieurs années développé des outils pour générer des annotations nécessaires à l’entraînement 
-        de ces modèles. Toutefois, la plupart de ces outils sont payants ou soumis à des restrictions de licence, limitant leur accessibilité. 
-        Face à cette demande croissante de solutions d'annotation open source, Kitware a souhaité répondre à ce besoin en créant une plateforme 
-        dédiée. Cette plateforme, conçue comme un plugin pour ParaView – un logiciel de visualisation de données scientifiques également 
-        développé par Kitware – offre une alternative libre d’accès nommée <strong>Paralabel</strong>.
+      <div class="exp-header">
+        <img class="company-logo" src="images/logo_kitware.png" alt="Kitware">
+        <h3 data-i18n="kitware.title">February 2024 – July 2024 — C++/Qt Software Engineering Intern</h3>
+      </div>
+      <p style="text-align: justify;" data-i18n-html="kitware.text">
+        Contributed to <strong>Paralabel</strong>, an open-source annotation platform for large 3D machine-learning datasets (ParaView plugin), including unit-test development and validation. Applied software development best practices through Git branching, pull requests, code reviews, and version management with tags.
       </p>
       <p><strong>C++, CMake, Qt, VTK</strong></p>
-      <p><strong><a href="https://www.kitware.fr/">Kitware SAS</a></strong> 6 Cr André Philip 69100 Villeurbanne</p>
-      <p><strong>Maîtres de stage : </strong> <a href="https://www.kitware.fr/profiles/gatien-ferret-2/">Gatien Ferret (Responsable équipe vision par ordinateur)</a>, <a href="https://www.kitware.fr/profiles/loic-tetrel/">Loic Tetrel (Lead Développeur)</a></p>
-      <p><strong><a href="https://gitlab.kitware.com/keu-computervision/paralabel/paralabel">=> Lien vers le code source</a></strong></p>
+      <p><strong><a href="https://www.kitware.fr/">Kitware SAS</a></strong> 6 Cr André Philip, 69100 Villeurbanne</p>
+      <p><strong data-i18n="common.supervisors">Internship supervisors: </strong> <a href="https://www.kitware.fr/profiles/gatien-ferret-2/" data-i18n="kitware.gatien">Gatien Ferret (Computer Vision Team Lead)</a>, <a href="https://www.kitware.fr/profiles/loic-tetrel/" data-i18n="kitware.loic">Loic Tetrel (Lead Developer)</a></p>
+      <p><strong><a href="https://gitlab.kitware.com/keu-computervision/paralabel/paralabel" data-i18n="common.sourceCode">=> Source code</a></strong></p>
     </div>
 
-    <img src="images/image6.png" alt="Vue de Paralabel" width=100% height="400">
+    <img src="images/image6.png" alt="Paralabel view" width=100% height="400" data-i18n-alt="kitware.imgAlt">
 
     <hr>
 
     <div id="project_unc">
-      <h3>Août 2022 à Août 2023 - Chercheur stagiaire en imagerie médicale à UNC (University of North Carolina at Chapel Hill)</h3>
-      <p style="text-align: justify;">En imagerie médicale, de nombreux chercheurs s'intéressent au fonctionnement du cerveau. Pour étudier son activité et ses connexions,
-         des méthodes d’imagerie comme la DTI (Diffusion Tensor Imaging) sont utilisées pour visualiser les fibres cérébrales et le sens de 
-         leurs connexions. L’objectif est de classifier ces fibres en fonction de leur orientation et de leurs groupes, permettant ainsi une 
-         meilleure compréhension des mécanismes cérébraux. Ce projet de recherche, dirigé par le Dr Juan Carlos Prieto et le Dr Martin Styner, 
-         a permis de tester plusieurs réseaux de neurones pour la classification des fibres, avec un taux de précision de 85 %. 
-         Toutefois, certaines classes demeurent difficiles à prédire, et le sujet fait toujours l’objet de recherches.</p>
+      <div class="exp-header">
+        <div class="company-logos">
+          <img class="company-logo" src="images/logo_kitware.png" alt="Kitware">
+          <img class="company-logo company-logo--unc" src="images/logo_unc.png" alt="UNC Chapel Hill">
+        </div>
+        <h3 data-i18n="unc.title">August 2022 – August 2023 — Medical Imaging Research Intern (Kitware / UNC Chapel Hill)</h3>
+      </div>
+      <p style="text-align: justify;" data-i18n="unc.intro">
+        This research internship focused on large-scale medical datasets, with the goal of advancing healthcare and giving researchers better tools to understand the brain.
+      </p>
+      <ul class="exp-bullets">
+        <li data-i18n="unc.b1">Neuronal fiber classification with deep learning (PyTorch) — training, experimentation and evaluation with Dr. Juan Carlos Prieto and Dr. Martin Styner</li>
+        <li data-i18n="unc.b2">Contribution to DTIPlayground, a medical imaging tool used by researchers</li>
+        <li data-i18n="unc.b3">Development of a Python Image_Filter module for Diffusion Tensor Imaging (DTI) filtering</li>
+      </ul>
+      <p style="text-align: justify;" data-i18n="unc.impact">
+        The aim was to support researchers as effectively as possible in their work and help push medical imaging research forward.
+      </p>
       <p><strong>Python, PyTorch Lightning, PyTorch3D, Dipy, VTK, TensorFlow, TensorBoard</strong></p>
       <p><strong><a href="https://www.unc.edu/">University of North Carolina at Chapel Hill</a></strong> 1201 S Columbia Rd, Chapel Hill, NC 27599</p>
-      <p><strong>Maîtres de stage : </strong><a href="https://www.med.unc.edu/psych/people/martin-styner-phd/">Dr. Martin Styner</a>, <a href="https://www.med.unc.edu/psych/people/juan-prieto-phd/">Dr. Juan Carlos Prieto</a></p>
-      <p><strong><a href="https://github.com/Teklaw7/Project_Brain_Fibers_Classification">=> Lien vers le code source</a></strong></p>
+      <p><strong data-i18n="common.supervisors">Internship supervisors: </strong><a href="https://www.med.unc.edu/psych/people/martin-styner-phd/">Dr. Martin Styner</a>, <a href="https://www.med.unc.edu/psych/people/juan-prieto-phd/">Dr. Juan Carlos Prieto</a></p>
+      <p><strong><a href="https://github.com/NIRALUser/DTIPlayground" data-i18n="unc.dtiLink">=> DTIPlayground</a></strong> · <strong><a href="https://github.com/Teklaw7/Project_Brain_Fibers_Classification" data-i18n="common.sourceCode">=> Source code</a></strong></p>
     </div>
-    <div class="unc">
-      <div class="unc-container">
-        <div class="unc-item">
-          <img src="images/image1.png" alt="image1" width=50% height="400">
-        </div>
-        <div class="unc-item">
-          <img src="images/image4.png" alt="image4" width=50% height="400">
-        </div>
-      </div>
-      <button class="unc-button prev" onclick="changeSlide(-1)">&#10094;</button>
-      <button class="unc-button next" onclick="changeSlide(1)">&#10095;</button>
+    <div class="unc-gallery">
+      <figure>
+        <img src="images/unc_dti_axial.png" alt="Axial DTI brain scan" data-i18n-alt="unc.img1Alt">
+        <figcaption data-i18n="unc.img1Caption">DTI — brain white-matter fiber directions</figcaption>
+      </figure>
+      <figure>
+        <img src="images/unc_mri_dti_grid.png" alt="MRI and DTI medical imaging panel" data-i18n-alt="unc.img2Alt">
+        <figcaption data-i18n="unc.img2Caption">MRI &amp; DTI — large medical imaging datasets</figcaption>
+      </figure>
+      <figure>
+        <img src="images/image1.png" alt="Brain fiber visualization" data-i18n-alt="unc.img3Alt">
+        <figcaption data-i18n="unc.img3Caption">Fiber tractography visualization</figcaption>
+      </figure>
+      <figure>
+        <img src="images/image4.png" alt="Brain fiber classification result" data-i18n-alt="unc.img4Alt">
+        <figcaption data-i18n="unc.img4Caption">Neuronal fiber classification results</figcaption>
+      </figure>
     </div>
 
     <hr>
   </section>
 
   <section id="personal_projects">
-    <h2><a>Projets Personnels</a></h2>
+    <h2><a data-i18n="personal.heading">Personal Projects</a></h2>
     <div class="project_end_of_studies">
-      <h3>De Décembre 2023 à Janvier 2024 - Reconstruction de la trajectoire 3D d'une balle de tennis</h3>
-      <p style="text-align: justify";>
-      Ce projet a été réalisé avec Luc Anchling dans le but de reconstruire la trajectoire 3D d'une balle de tennis
-      grâce à deux caméras. Ce projet comporte une tâche de calibrage des caméras permettant de connaître la position
-      3D de la balle de tennis par rapport à un référentiel commun aux deux caméras. Il comporte également une tâche 
-      permettant de détecter et de traquer la balle de tennis sur les deux caméras même si la balle est partiellement
-      obstruée. Ce projet a été menée à bien permettant la création d'un jeu vidéo sous unity (Toucher certains blocs 
-      en 3D à partir de la balle de tennis) mais également à analyser la trajectoire de la balle : vitesse, point de chute...
+      <h3 data-i18n="tennis.title">December 2023 to January 2024 - 3D reconstruction of a tennis ball trajectory</h3>
+      <p style="text-align: justify;" data-i18n="tennis.text">
+      This project was carried out with Luc Anchling to reconstruct the 3D trajectory of a tennis ball using two cameras. It includes a camera calibration task to determine the 3D position of the tennis ball relative to a common reference frame for both cameras. It also includes a task to detect and track the tennis ball on both cameras even when the ball is partially occluded. The project was completed successfully, enabling the creation of a Unity video game (hitting 3D blocks with the tennis ball) as well as analysis of the ball's trajectory: speed, bounce point, and more.
       </p>
       <p><strong>Python, OpenCV</strong></p>
-      <p><strong>Collaborateurs : </strong>Luc Anchling</p>
-      <p><strong><a href="https://github.com/lucanchling/Object_Tracking">=> Lien vers le code source</a></strong></p>
+      <p><strong data-i18n="common.collaborators">Collaborators: </strong>Luc Anchling</p>
+      <p><strong><a href="https://github.com/lucanchling/Object_Tracking" data-i18n="common.sourceCode">=> Source code</a></strong></p>
     </div>
 
     <div class="reco">
@@ -135,29 +199,25 @@
     <hr>
 
     <div class="project_mole_checking">
-      <h3>En cours - Plateforme web permettant de diagnostiquer un grain de beauté</h3>
-      <p style="text-align: justify";>
-        Dans le cadre de l'amélioration des outils de santé en ligne, je travaille en ce moment sur une application web innovante permettant 
-        de détecter la présence de grains de beauté potentiellement cancéreux. Cette application s’appuie sur une approche algorithmique 
-        avancée pour analyser les photos des grains de beauté, en l’absence d'intelligence artificielle pour l'instant. L’objectif 
-        est d’offrir une première évaluation visuelle afin de détecter les signes avant-coureurs du cancer de la peau, principalement 
-        le mélanome.
+      <h3 data-i18n="mole.title">In progress - Web platform to diagnose a mole</h3>
+      <p style="text-align: justify;" data-i18n="mole.text">
+        As part of improving online health tools, I am currently working on an innovative web application to detect potentially cancerous moles. The application currently relies on an advanced algorithmic approach to analyze photos of moles, without artificial intelligence for now. The goal is to provide an initial visual assessment to detect early warning signs of skin cancer, mainly melanoma.
       </p>
       <p><strong>Vue, JS</strong></p>
-      <p><strong><a href="https://github.com/Teklaw7?tab=repositories">=> Lien vers le code source</a></strong></p>
+      <p><strong><a href="https://github.com/Teklaw7?tab=repositories" data-i18n="common.sourceCode">=> Source code</a></strong></p>
     </div>
     
   </section>
 
   <section id="experiences">
-    <h2>Expériences Internationales</h2>
+    <h2 data-i18n="intl.heading">International Experience</h2>
     <div id="worldMap" style="width: 100%; height: 500px;"></div>
   </section>
   
   <section id="github">
     <h2><a href="https://github.com/Teklaw7?tab=repositories">GitHub</a></h2>
-    <p>Vous pouvez consulter mon profil GitHub pour plus de détails sur mes projets et contributions.</p>
-    <a href="https://github.com/Teklaw7?tab=repositories"><strong>Visiter mon profil GitHub</strong></a>
+    <p data-i18n="github.text">You can visit my GitHub profile for more details on my projects and contributions.</p>
+    <a href="https://github.com/Teklaw7?tab=repositories"><strong data-i18n="github.link">Visit my GitHub profile</strong></a>
   </section>
 
   <!-- Zoomed image container -->
@@ -167,10 +227,11 @@
   </div>
 
   <footer>
-    <p><a href="mailto:timothee.teyssier@cpe.fr"><strong>Contactez-moi : timothee.teyssier@cpe.fr</strong></a></p>
+    <p><a href="mailto:timothee.teyssier@cpe.fr"><strong data-i18n="common.contact">Contact me: timothee.teyssier@cpe.fr</strong></a></p>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 
 </body>

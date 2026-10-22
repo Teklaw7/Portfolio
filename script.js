@@ -8,19 +8,26 @@ const locations = [
     {
         coords: [46.603354, 1.888334],
         popups: [
-            { popup: " - France : Brignais : Développeur C++ / Qt", url: "#projects" },
-            { popup: " - France : Villeurbanne : Stage en vision par ordinateur à Kitware SAS, Développement d'une plateforme d'annotations de données 3D", url: "#projects" }
+            { key: "map.toussieu", url: "#projects" },
+            { key: "map.lyon", url: "#projects" },
+            { key: "map.villeurbanne", url: "#projects" }
         ]
     },
     {
         coords: [35.9049, -79.0484],
         popups: [
-            { popup: " - États-Unis : Année de césure de recherche en imagerie médicale à UNC", url: "#projects" }
+            { key: "map.unc", url: "#projects" }
         ]
     },
 ];
 
-locations.forEach(location => {
+function buildPopupContent(location) {
+    return location.popups.map(
+        item => `<div><a href="#" onclick="navigateToPage('${item.url}')">${t(item.key)}</a></div>`
+    ).join("");
+}
+
+const markers = locations.map(location => {
     const marker = L.circle(location.coords, {
         color: 'blue',
         fillColor: '#4b8fb1',
@@ -28,12 +35,14 @@ locations.forEach(location => {
         radius: 500000
     }).addTo(map);
 
-    // Construction du contenu du popup avec plusieurs liens si nécessaire
-    const popupContent = location.popups.map(
-        item => `<div><a href="#" onclick="navigateToPage('${item.url}')">${item.popup}</a></div>`
-    ).join("");
+    marker.bindPopup(buildPopupContent(location));
+    return { marker, location };
+});
 
-    marker.bindPopup(popupContent);
+document.addEventListener("languagechange", () => {
+    markers.forEach(({ marker, location }) => {
+        marker.setPopupContent(buildPopupContent(location));
+    });
 });
 
 function navigateToPage(url) {
@@ -92,10 +101,10 @@ function openZoom(imageSrc) {
     zoomedContainer.style.display = "none";  // Cacher le zoom
   }
   
-  // Ajouter un événement de clic aux images
-  document.querySelectorAll('img').forEach(function(img) {
+  // Ajouter un événement de clic aux images (hors logos entreprise)
+  document.querySelectorAll('img:not(.company-logo):not(.profile-photo)').forEach(function(img) {
     img.addEventListener('click', function() {
-      openZoom(this.src);  // Ouvrir l'image en plein écran
+      openZoom(this.src);
     });
   });
   
