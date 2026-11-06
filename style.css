@@ -187,7 +187,8 @@ a:hover {
   grid-template-columns: 1.35fr 0.85fr 0.75fr;
   grid-template-areas:
     "intro photo links"
-    "about skills skills";
+    "about about about"
+    "skills skills skills";
 }
 
 .tile-intro { grid-area: intro; }
@@ -196,9 +197,8 @@ a:hover {
 .tile-about { grid-area: about; }
 .tile-skills { grid-area: skills; }
 
-/* About: compact tile — don't stretch empty space */
+/* Full-width introduction avoids an empty column beside the long skills list. */
 .tile-about {
-  align-self: start;
   padding: 1rem 1.15rem;
 }
 
@@ -364,6 +364,10 @@ a:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.75rem;
+  row-gap: 0.65rem;
 }
 
 .skills-list li {
@@ -581,6 +585,7 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  .skills-list { grid-template-columns: 1fr; }
   .tennis-gallery {
     grid-template-columns: 1fr;
   }
@@ -705,6 +710,7 @@ footer a:hover {
 }
 
 @media (max-width: 600px) {
+  .skills-list { grid-template-columns: 1fr; }
   .top-bar {
     border-radius: 1rem;
     flex-wrap: wrap;
@@ -748,6 +754,7 @@ footer a:hover {
 .smp-gallery img { width: auto; max-width: 100%; height: auto; max-height: 285px; object-fit: contain; }
 .smp-gallery-wide img { width: auto; max-width: 100%; height: auto; max-height: 340px; }
 .smp-gallery figcaption { align-self: stretch; }
+
 
 /* Unity personal project: existing card styling preserved */
 .bento-unity { grid-template-columns: 1fr; }
