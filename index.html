@@ -54,7 +54,7 @@
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="fr" aria-pressed="false">FR</button>
         </div>
-        <a href="CV_2026-10_Timothee_Teyssier.pdf" class="cv-link" target="_blank" data-i18n="index.cv">My CV</a>
+        <a href="timothee_teyssier_cv.pdf" class="cv-link" target="_blank" data-i18n="index.cv">My CV</a>
       </div>
     </nav>
 
@@ -62,9 +62,9 @@
       <article class="tile tile-intro">
         <p class="tile-label">Portfolio</p>
         <h1>Timothée Teyssier</h1>
-        <p class="role" data-i18n="index.role">Data Scientist | Machine Learning &amp; Computer Vision</p>
+        <p class="role" data-i18n="index.role">AI Engineer | Computer Vision &amp; Generative AI</p>
         <p class="school" data-i18n="index.school">Graduate of CPE Lyon — Imaging, Modelling &amp; Computer Science (IMI)</p>
-        <span class="pill">Machine Learning · Computer Vision · Python · C++</span>
+        <span class="pill">Machine Learning · Computer Vision · Generative AI · C++</span>
       </article>
 
       <article class="tile tile-photo">
@@ -88,7 +88,8 @@
         <p class="tile-label" data-i18n="skills.heading">Skills</p>
         <ul class="skills-list">
           <li><strong data-i18n="skills.ai">AI &amp; Machine Learning: </strong>Python, PyTorch, PyTorch Lightning, supervised / unsupervised / contrastive learning, dataset preparation, model evaluation, optimization</li>
-          <li><strong data-i18n="skills.cv">Computer Vision: </strong>OpenCV, image processing, object detection, segmentation, classification</li>
+          <li><strong data-i18n="skills.llm">LLMs &amp; Generative AI: </strong><span data-i18n="skills.llmValue">Qwen (VLM), Transformers, LoRA / QLoRA, Ollama, RAG, local LLM inference</span></li>
+          <li><strong data-i18n="skills.cv">Computer Vision: </strong>OpenCV, YOLO, Vision Transformers (ViT), ResNet, image processing, object detection, segmentation, classification</li>
           <li><strong data-i18n="skills.databases">Databases: </strong>PostgreSQL, MySQL, SQLite, MongoDB</li>
           <li><strong data-i18n="skills.analysis">Data analysis &amp; visualization: </strong>Statistical analysis, Plotly, Power BI</li>
           <li><strong data-i18n="skills.software">Software engineering: </strong>C++, Qt, CMake, Git, Docker</li>
@@ -100,31 +101,59 @@
       </article>
     </div>
 
+    <div class="bento bento-unity" id="unity-project">
+      <article class="tile tile-wide project-unity">
+        <p class="tile-label" data-i18n="unity.label">Personal Project · 3D &amp; Game Development</p>
+        <div class="unity-project-layout">
+          <div class="unity-project-copy">
+            <h3 data-i18n="unity.title">Procedural World Generation — Unity</h3>
+            <p data-i18n="unity.text">A personal experiment in procedural world generation with Unity and C#: building small islands with varied terrain elevations, distinct terrain regions and procedural placement of different types of trees and 3D assets. It reflects my interest in 3D environments, game engines and procedural content generation.</p>
+            <ul class="tech-stack" aria-label="Tech stack"><li>Unity</li><li>C#</li><li>Procedural Generation</li><li>3D Assets</li></ul>
+          </div>
+          <figure class="unity-project-visual">
+            <img src="images/unity_procedural_illustration.gif" alt="Illustrative low-poly procedural terrain scene" data-i18n-alt="unity.imgAlt" loading="lazy">
+            <figcaption data-i18n="unity.caption">Illustrative reconstruction — not an original screenshot of the project.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+
     <h2 class="section-title" data-i18n="exp.heading">Professional Experience</h2>
 
     <div class="bento bento-exp" id="projects">
       <article class="tile tile-wide project_smp">
-        <p class="tile-label">DetecTool · SMP Technik</p>
+        <p class="tile-label">AI Projects · SMP Technik</p>
         <div class="exp-header">
           <img class="company-logo" src="images/logo_smp.png" alt="SMP Technik">
-          <h3 data-i18n="smp.title">May 2025 – Present — AI &amp; Computer Vision Engineer</h3>
+          <h3 data-i18n="smp.title">May 2025 – Present — AI Engineer | Computer Vision &amp; Generative AI</h3>
         </div>
         <p data-i18n-html="smp.intro">
-          At SMP Technik, I build industrial AI applications that combine computer vision, machine learning and software engineering. My main product is <strong>DetecTool</strong>, an AI recognition solution for new and used metal-cutting tools (drills and mills).
+          At SMP Technik, I design and deploy end-to-end industrial AI solutions: <strong><a href="https://www.smp-technik.fr/logiciels-2/logiciel-detectool/" target="_blank" rel="noopener noreferrer">DetecTool</a></strong> for cutting-tool recognition; automated spindle drawing analysis integrated into <strong><a href="https://www.smp-technik.fr/logiciels-2/logiciel-easygrind/" target="_blank" rel="noopener noreferrer">EasyGrind</a></strong> and <strong><a href="https://www.smp-technik.fr/logiciels-2/logiciel-broachexpert/" target="_blank" rel="noopener noreferrer">Broach Expert</a></strong>; RAG assistants for technical support; and locally hosted email assistance for customer service and sales.
         </p>
         <ul class="exp-bullets">
-          <li data-i18n="smp.b1">End-to-end ML workflows: annotation, dataset prep, training and optimization</li>
-          <li data-i18n="smp.b2">Multi-stage pipelines for tool detection, segmentation and classification</li>
-          <li data-i18n="smp.b3">AI tool to analyze spindle drawings and extract their key technical elements</li>
-          <li data-i18n="smp.b4">Model evaluation with precision, recall, F1-score and confusion matrices</li>
-          <li data-i18n="smp.b5">AI inference integrated into desktop/mobile apps, databases and MQTT</li>
+          <li data-i18n-html="smp.b1">
+          <a href="https://www.smp-technik.fr/logiciels-2/logiciel-detectool/" target="_blank" rel="noopener noreferrer">DetecTool</a> — dataset preparation, annotation, model training and evaluation; cutting-tool detection, segmentation and classification for desktop and mobile applications
+        </li>
+          <li data-i18n-html="smp.b2">
+          Spindle drawing analysis — dataset preparation, annotation, training and evaluation of YOLO, Vision Transformer (ViT) and ResNet models; Qwen VLM fine-tuning with LoRA / QLoRA to extract technical information, followed by decoding and integration of structured data into <a href="https://www.smp-technik.fr/logiciels-2/logiciel-easygrind/" target="_blank" rel="noopener noreferrer">EasyGrind</a> and <a href="https://www.smp-technik.fr/logiciels-2/logiciel-broachexpert/" target="_blank" rel="noopener noreferrer">Broach Expert</a>
+        </li>
+          <li data-i18n="smp.b3">
+          Technical documentation RAG — developed retrieval-augmented generation workflows over historical company files and procedures, helping technicians and after-sales teams verify instructions and find answers to technical questions
+        </li>
+          <li data-i18n="smp.b4">
+          Local email assistant — developed a Docker-based module using Ollama to read, analyze and draft responses to customer support and sales emails, with LLM inference running locally on company PCs
+        </li>
+          <li data-i18n="smp.b5">
+          MLOps & deployment — model optimization and quantization, TensorRT acceleration, inference integration, and deployment using Docker containers or virtual machines depending on application requirements
+        </li>
         </ul>
         <p data-i18n="smp.event">
           In May 2026, we presented DetecTool at the Grinding Hub trade fair in Munich.
         </p>
         <ul class="tech-stack" aria-label="Tech stack">
-          <li>Python</li><li>PyTorch</li><li>OpenCV</li><li>ONNX</li><li>TensorRT</li><li>SQL</li><li>MQTT</li>
+          <li>Python</li><li>PyTorch</li><li>YOLO</li><li>ViT</li><li>ResNet</li><li>Qwen VLM</li><li>Transformers</li><li>LoRA / QLoRA</li><li>Ollama</li><li>RAG</li><li>ONNX</li><li>TensorRT</li><li>Quantization</li><li>Docker</li><li>Virtual Machines</li><li>GitLab CI/CD</li><li>C++ / Qt</li>
         </ul>
+        <p class="meta-line"><strong data-i18n="smp.products">Product pages: </strong><a href="https://www.smp-technik.fr/logiciels-2/logiciel-detectool/" target="_blank" rel="noopener">DetecTool</a> · <a href="https://www.smp-technik.fr/logiciels-2/logiciel-easygrind/" target="_blank" rel="noopener">EasyGrind</a> · <a href="https://www.smp-technik.fr/logiciels-2/logiciel-broachexpert/" target="_blank" rel="noopener">Broach Expert</a></p>
         <p class="meta-line"><strong><a href="https://www.smp-technik.fr/">SMP Technik</a></strong> — 122 rue Pasteur, 69780 Toussieu</p>
         <div class="smp-gallery">
           <figure>
@@ -172,7 +201,7 @@
           <h3 data-i18n="kitware.title">February 2024 – July 2024 — C++/Qt Software Engineering Intern</h3>
         </div>
         <p data-i18n-html="kitware.text">
-          Contributed to <strong>Paralabel</strong>, an open-source annotation platform for large 3D machine-learning datasets (ParaView plugin), including unit-test development and validation. Applied software development best practices through Git branching, pull requests, code reviews, and version management with tags.
+          Contributed to <strong><a href="https://www.kitware.com/paralabel-a-paraview-plugin-for-3d-object-detection-annotation-at-scale/" target="_blank" rel="noopener noreferrer">Paralabel</a></strong>, an open-source annotation platform for large 3D machine-learning datasets (ParaView plugin), including unit-test development and validation. Applied software development best practices through Git branching, pull requests, code reviews, and version management with tags.
         </p>
         <ul class="tech-stack" aria-label="Tech stack">
           <li>C++</li><li>CMake</li><li>Qt</li><li>VTK</li>

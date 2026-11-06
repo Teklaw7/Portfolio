@@ -742,3 +742,18 @@ footer a:hover {
     transition: none;
   }
 }
+
+/* SMP gallery: native aspect ratios, balanced image sizes, no empty letterboxing. */
+.smp-gallery figure { display: flex; flex-direction: column; align-items: center; }
+.smp-gallery img { width: auto; max-width: 100%; height: auto; max-height: 285px; object-fit: contain; }
+.smp-gallery-wide img { width: auto; max-width: 100%; height: auto; max-height: 340px; }
+.smp-gallery figcaption { align-self: stretch; }
+
+/* Unity personal project: existing card styling preserved */
+.bento-unity { grid-template-columns: 1fr; }
+.unity-project-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
+.unity-project-copy p { line-height: 1.65; }
+.unity-project-visual { margin: 0; min-width: 0; }
+.unity-project-visual img { display: block; width: 100%; height: auto; border-radius: 0.65rem; border: 1px solid var(--border); }
+.unity-project-visual figcaption { font-size: 0.72rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.4; }
+@media (max-width: 720px) { .unity-project-layout { grid-template-columns: 1fr; } }
